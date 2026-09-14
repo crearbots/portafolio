@@ -35,15 +35,20 @@ const github = 'https://github.com/crearbots';
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
+        <p class="hero-eyebrow">Disponible para proyectos</p>
         <h1 id="hero-title">Automatización y dashboards que tu equipo puede usar cada semana</h1>
         <p class="hero-sub">
           Soy Sebastian Romero, ingeniero de sistemas. Construyo herramientas web e informes
           operativos — no demos para impresionar, sistemas para trabajar.
         </p>
-        <p class="hero-meta">Colombia · UTC−5 · Remoto · Disponible para proyectos</p>
+        <p class="hero-meta">
+          <span>Colombia</span>
+          <span>UTC−5</span>
+          <span>Remoto</span>
+        </p>
         <div class="cta-row">
           <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
-            Hablemos
+            Hablemos por WhatsApp
           </a>
           <a class="btn btn-ghost" href={`${base}#casos`}>Ver casos</a>
           <a
@@ -60,10 +65,13 @@ const github = 'https://github.com/crearbots';
 
     <section id="servicios" aria-labelledby="servicios-title">
       <div class="wrap">
-        <p class="section-label">Servicios</p>
-        <h2 id="servicios-title">En qué puedo ayudarte</h2>
+        <div class="section-head">
+          <p class="section-label">Servicios</p>
+          <h2 id="servicios-title">En qué puedo ayudarte</h2>
+        </div>
         <div class="services-grid">
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">01</div>
             <h3>Dashboards e informes operativos</h3>
             <p>
               Dejas de armar el reporte a mano. Tableros y resúmenes semanales listos para
@@ -71,6 +79,7 @@ const github = 'https://github.com/crearbots';
             </p>
           </article>
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">02</div>
             <h3>Automatización de procesos</h3>
             <p>
               Scripts y flujos que quitan trabajo repetitivo: Excel, mensajes, cargas de datos y
@@ -78,12 +87,14 @@ const github = 'https://github.com/crearbots';
             </p>
           </article>
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">03</div>
             <h3>Desarrollo web orientado a operación</h3>
             <p>
               Paneles internos, login, carga de archivos y vistas claras para quien no es técnico.
             </p>
           </article>
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">04</div>
             <h3>Backend con Python y Node.js</h3>
             <p>
               APIs y lógica de negocio cuando tu proceso ya no cabe en una hoja de cálculo.
@@ -95,8 +106,10 @@ const github = 'https://github.com/crearbots';
 
     <section id="casos" aria-labelledby="casos-title">
       <div class="wrap">
-        <p class="section-label">Casos</p>
-        <h2 id="casos-title">Trabajo real, no demos</h2>
+        <div class="section-head">
+          <p class="section-label">Casos</p>
+          <h2 id="casos-title">Trabajo real, no demos</h2>
+        </div>
 
         <article class="case" aria-labelledby="caso-censo">
           <div class="case-header">
@@ -129,21 +142,37 @@ const github = 'https://github.com/crearbots';
               <dd>Python, FastAPI, SQLAlchemy, Jinja2, SQLite, Railway</dd>
             </div>
           </dl>
-          <p class="case-stack">Python · FastAPI · SQLAlchemy · Jinja2 · SQLite · Railway</p>
-          <div class="shot-slot" role="img" aria-label="Espacio reservado para captura de pantalla">
-            Captura próximamente
+          <div class="case-stack" aria-label="Tecnologías">
+            <span class="stack-chip">Python</span>
+            <span class="stack-chip">FastAPI</span>
+            <span class="stack-chip">SQLAlchemy</span>
+            <span class="stack-chip">Jinja2</span>
+            <span class="stack-chip">SQLite</span>
+            <span class="stack-chip">Railway</span>
+          </div>
+          <div class="shot-frame">
+            <div class="shot-chrome" aria-hidden="true">
+              <div class="shot-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="shot-url">panel interno · captura próximamente</div>
+            </div>
+            <div class="shot-slot" role="img" aria-label="Espacio reservado para captura de pantalla del panel censo">
+              <span class="shot-slot-label">Captura del producto</span>
+              <span class="shot-slot-hint">Espacio listo para la imagen del dashboard</span>
+            </div>
           </div>
           <div class="case-actions">
+            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
+              ¿Necesitas un panel así para tu operación?
+            </a>
             <a
-              class="btn btn-ghost"
+              class="case-repo"
               href="https://github.com/crearbots/censo"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ver en GitHub
-            </a>
-            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
-              ¿Necesitas un panel así para tu operación?
+              Código en GitHub
             </a>
           </div>
         </article>
@@ -173,18 +202,23 @@ const github = 'https://github.com/crearbots';
               <dd>Python, Tkinter, PyAutoGUI, pandas</dd>
             </div>
           </dl>
-          <p class="case-stack">Python · Tkinter · PyAutoGUI · pandas</p>
+          <div class="case-stack" aria-label="Tecnologías">
+            <span class="stack-chip">Python</span>
+            <span class="stack-chip">Tkinter</span>
+            <span class="stack-chip">PyAutoGUI</span>
+            <span class="stack-chip">pandas</span>
+          </div>
           <div class="case-actions">
+            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
+              Si te interesa este flujo, lo maduramos juntos
+            </a>
             <a
-              class="btn btn-ghost"
+              class="case-repo"
               href="https://github.com/crearbots/WhatsApp-Mensajes-Personalizados-Web"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ver en GitHub
-            </a>
-            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
-              Si te interesa este flujo, lo maduramos juntos
+              Código en GitHub
             </a>
           </div>
         </article>
@@ -193,8 +227,10 @@ const github = 'https://github.com/crearbots';
 
     <section id="como-trabajo" aria-labelledby="como-title">
       <div class="wrap">
-        <p class="section-label">Método</p>
-        <h2 id="como-title">Cómo trabajo</h2>
+        <div class="section-head">
+          <p class="section-label">Método</p>
+          <h2 id="como-title">Cómo trabajo</h2>
+        </div>
         <ol class="steps">
           <li class="step">
             <h3>Entender el proceso</h3>
@@ -223,8 +259,10 @@ const github = 'https://github.com/crearbots';
 
     <section id="sobre-mi" aria-labelledby="sobre-title">
       <div class="wrap">
-        <p class="section-label">Sobre mí</p>
-        <h2 id="sobre-title">Ingeniero de sistemas, enfoque operativo</h2>
+        <div class="section-head">
+          <p class="section-label">Sobre mí</p>
+          <h2 id="sobre-title">Ingeniero de sistemas, enfoque operativo</h2>
+        </div>
         <div class="about-text">
           <p>
             Me importa más que tus procesos no dependan de un “héroe del Excel” que sabe dónde
@@ -248,8 +286,10 @@ const github = 'https://github.com/crearbots';
 
     <section id="contacto" aria-labelledby="contacto-title">
       <div class="wrap">
-        <p class="section-label">Contacto</p>
-        <h2 id="contacto-title">Hablemos</h2>
+        <div class="section-head">
+          <p class="section-label">Contacto</p>
+          <h2 id="contacto-title">Hablemos</h2>
+        </div>
         <div class="contact-box">
           <p>
             Cuéntame qué proceso quieres ordenar o automatizar. Respondemos por WhatsApp y vemos

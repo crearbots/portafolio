@@ -151,7 +151,7 @@ const github = 'https://github.com/crearbots';
             <span class="stack-chip">SQLite</span>
             <span class="stack-chip">Railway</span>
           </div>
-          <div class="shot-gallery" aria-label="Capturas del producto censo">
+          <div class="shot-gallery" aria-label="Capturas del producto censo" data-lightbox-gallery>
             <figure class="shot-frame">
               <div class="shot-chrome" aria-hidden="true">
                 <div class="shot-dots">
@@ -160,14 +160,24 @@ const github = 'https://github.com/crearbots';
                 <div class="shot-url">infomira-censo · /dashboard</div>
               </div>
               <div class="shot-media">
-                <img
-                  src={`${base}images/censo/dashboard-avance.png`}
-                  alt="Dashboard InfoMIRA Censo: avance del equipo 290 de 500 (58 %) en Resultados septiembre 2026"
-                  width="1200"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <button
+                  type="button"
+                  class="shot-trigger"
+                  data-lightbox-open
+                  data-lightbox-src={`${base}images/censo/dashboard-avance.png`}
+                  data-lightbox-alt="Dashboard InfoMIRA Censo: avance del equipo 290 de 500 (58 %) en Resultados septiembre 2026"
+                  data-lightbox-caption="Dashboard de avance"
+                  aria-label="Ampliar imagen: Dashboard de avance"
+                >
+                  <img
+                    src={`${base}images/censo/dashboard-avance.png`}
+                    alt="Dashboard InfoMIRA Censo: avance del equipo 290 de 500 (58 %) en Resultados septiembre 2026"
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
               </div>
               <figcaption class="shot-caption">Dashboard de avance</figcaption>
             </figure>
@@ -179,14 +189,24 @@ const github = 'https://github.com/crearbots';
                 <div class="shot-url">infomira-censo · evolución diaria</div>
               </div>
               <div class="shot-media">
-                <img
-                  src={`${base}images/censo/dashboard-evolucion.png`}
-                  alt="Gráfico de evolución diaria del censo InfoMIRA: acumulado de personas instaladas en el tiempo"
-                  width="1200"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <button
+                  type="button"
+                  class="shot-trigger"
+                  data-lightbox-open
+                  data-lightbox-src={`${base}images/censo/dashboard-evolucion.png`}
+                  data-lightbox-alt="Gráfico de evolución diaria del censo InfoMIRA: acumulado de personas instaladas en el tiempo"
+                  data-lightbox-caption="Evolución del censo"
+                  aria-label="Ampliar imagen: Evolución del censo"
+                >
+                  <img
+                    src={`${base}images/censo/dashboard-evolucion.png`}
+                    alt="Gráfico de evolución diaria del censo InfoMIRA: acumulado de personas instaladas en el tiempo"
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
               </div>
               <figcaption class="shot-caption">Evolución del censo</figcaption>
             </figure>
@@ -198,14 +218,24 @@ const github = 'https://github.com/crearbots';
                 <div class="shot-url">infomira-censo · /informe</div>
               </div>
               <div class="shot-media">
-                <img
-                  src={`${base}images/censo/informe-whatsapp.png`}
-                  alt="Informe semanal de InfoMIRA Censo listo para copiar y pegar en WhatsApp"
-                  width="1200"
-                  height="750"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <button
+                  type="button"
+                  class="shot-trigger"
+                  data-lightbox-open
+                  data-lightbox-src={`${base}images/censo/informe-whatsapp.png`}
+                  data-lightbox-alt="Informe semanal de InfoMIRA Censo listo para copiar y pegar en WhatsApp"
+                  data-lightbox-caption="Informe semanal para WhatsApp"
+                  aria-label="Ampliar imagen: Informe semanal para WhatsApp"
+                >
+                  <img
+                    src={`${base}images/censo/informe-whatsapp.png`}
+                    alt="Informe semanal de InfoMIRA Censo listo para copiar y pegar en WhatsApp"
+                    width="1200"
+                    height="750"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
               </div>
               <figcaption class="shot-caption">Informe semanal para WhatsApp</figcaption>
             </figure>
@@ -374,6 +404,32 @@ const github = 'https://github.com/crearbots';
     </div>
   </footer>
 
+  <div
+    id="lightbox"
+    class="lightbox"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightbox-caption"
+  >
+    <div class="lightbox-backdrop" data-lightbox-close tabindex="-1"></div>
+    <div class="lightbox-panel">
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Cerrar imagen ampliada">
+        <span aria-hidden="true">×</span>
+      </button>
+      <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Imagen anterior">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <figure class="lightbox-figure">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+        <figcaption id="lightbox-caption" class="lightbox-caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Imagen siguiente">
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+  </div>
+
   <script>
     const toggle = document.getElementById('nav-toggle');
     const menu = document.getElementById('nav-menu');
@@ -389,5 +445,105 @@ const github = 'https://github.com/crearbots';
         });
       });
     }
+
+    (function initLightbox() {
+      const root = document.getElementById('lightbox');
+      if (!root) return;
+
+      const imgEl = document.getElementById('lightbox-img');
+      const captionEl = document.getElementById('lightbox-caption');
+      const closeBtn = root.querySelector('.lightbox-close');
+      const prevBtn = root.querySelector('[data-lightbox-prev]');
+      const nextBtn = root.querySelector('[data-lightbox-next]');
+      const triggers = Array.from(document.querySelectorAll('[data-lightbox-open]'));
+      if (!imgEl || !captionEl || !closeBtn || triggers.length === 0) return;
+
+      const focusables = () =>
+        [closeBtn, prevBtn, nextBtn].filter(
+          (el) => el && !el.hasAttribute('disabled') && el.offsetParent !== null
+        );
+
+      let index = 0;
+      let lastFocus = null;
+
+      function items() {
+        return triggers.map((btn) => ({
+          src: btn.getAttribute('data-lightbox-src') || '',
+          alt: btn.getAttribute('data-lightbox-alt') || '',
+          caption: btn.getAttribute('data-lightbox-caption') || '',
+        }));
+      }
+
+      function show(i) {
+        const list = items();
+        if (!list.length) return;
+        index = ((i % list.length) + list.length) % list.length;
+        const item = list[index];
+        imgEl.src = item.src;
+        imgEl.alt = item.alt;
+        captionEl.textContent = item.caption;
+      }
+
+      function openAt(i, trigger) {
+        lastFocus = trigger || document.activeElement;
+        show(i);
+        root.hidden = false;
+        document.body.classList.add('lightbox-open');
+        closeBtn.focus();
+      }
+
+      function close() {
+        if (root.hidden) return;
+        root.hidden = true;
+        document.body.classList.remove('lightbox-open');
+        imgEl.removeAttribute('src');
+        imgEl.alt = '';
+        captionEl.textContent = '';
+        if (lastFocus && typeof lastFocus.focus === 'function') {
+          lastFocus.focus();
+        }
+        lastFocus = null;
+      }
+
+      function step(delta) {
+        show(index + delta);
+      }
+
+      triggers.forEach((btn, i) => {
+        btn.addEventListener('click', () => openAt(i, btn));
+      });
+
+      root.querySelectorAll('[data-lightbox-close]').forEach((el) => {
+        el.addEventListener('click', close);
+      });
+      if (prevBtn) prevBtn.addEventListener('click', () => step(-1));
+      if (nextBtn) nextBtn.addEventListener('click', () => step(1));
+
+      document.addEventListener('keydown', (e) => {
+        if (root.hidden) return;
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          close();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          step(-1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          step(1);
+        } else if (e.key === 'Tab') {
+          const list = focusables();
+          if (list.length === 0) return;
+          const first = list[0];
+          const last = list[list.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    })();
   </script>
 </Layout>

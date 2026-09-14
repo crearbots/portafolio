@@ -1,15 +1,15 @@
-# Sebastian Romero · Portfolio
+# Sebastian Romero · Portafolio
 
-Sitio estático del portfolio freelance: automatización, dashboards e informes operativos.
+Sitio estático del portafolio freelance: automatización, dashboards e informes operativos.
 
-**Live:** [https://crearbots.github.io/portfolio/](https://crearbots.github.io/portfolio/)
+**Live:** [https://crearbots.github.io/portafolio/](https://crearbots.github.io/portafolio/)
 
 ## Stack
 
 - [Astro](https://astro.build/) (static)
 - CSS plano (sin frameworks)
 - Español (`lang="es"`)
-- GitHub Pages (`base: /portfolio/`)
+- GitHub Pages (`base: /portafolio/`)
 
 ## Desarrollo local
 
@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-Abre la URL que imprime Astro (por defecto `http://localhost:4321/portfolio/`).
+Abre la URL que imprime Astro (por defecto `http://localhost:4321/portafolio/`).
 
 ## Build
 
@@ -33,7 +33,7 @@ La salida queda en `dist/`.
 
 ## GitHub Pages
 
-- `astro.config.mjs`: `site: https://crearbots.github.io`, `base: /portfolio/`
+- `astro.config.mjs`: `site: https://crearbots.github.io`, `base: /portafolio/`
 - **Deploy actual:** rama `gh-pages` con el contenido de `dist/` + archivo `.nojekyll` (necesario para la carpeta `_astro`)
 - Source de Pages: branch `gh-pages` / root
 

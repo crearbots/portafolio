@@ -134,7 +134,8 @@ const github = 'https://github.com/crearbots';
             <div class="case-block">
               <dt>Resultado</dt>
               <dd>
-                Versión usable y versionada (v1.1–v1.4) en operación con el equipo.
+                Dashboard de avance e informe semanal para WhatsApp en operación;
+                versión usable y versionada (v1.1–v1.4) con el equipo.
               </dd>
             </div>
             <div class="case-block">
@@ -150,29 +151,79 @@ const github = 'https://github.com/crearbots';
             <span class="stack-chip">SQLite</span>
             <span class="stack-chip">Railway</span>
           </div>
-          <div class="shot-frame">
-            <div class="shot-chrome" aria-hidden="true">
-              <div class="shot-dots">
-                <span></span><span></span><span></span>
+          <div class="shot-gallery" aria-label="Capturas del producto censo">
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">infomira-censo · /dashboard</div>
               </div>
-              <div class="shot-url">panel interno · captura próximamente</div>
-            </div>
-            <div class="shot-slot" role="img" aria-label="Espacio reservado para captura de pantalla del panel censo">
-              <span class="shot-slot-label">Captura del producto</span>
-              <span class="shot-slot-hint">Espacio listo para la imagen del dashboard</span>
-            </div>
+              <div class="shot-media">
+                <img
+                  src={`${base}images/censo/dashboard-avance.png`}
+                  alt="Dashboard InfoMIRA Censo: avance del equipo 290 de 500 (58 %) en Resultados septiembre 2026"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="shot-caption">Dashboard de avance</figcaption>
+            </figure>
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">infomira-censo · evolución diaria</div>
+              </div>
+              <div class="shot-media">
+                <img
+                  src={`${base}images/censo/dashboard-evolucion.png`}
+                  alt="Gráfico de evolución diaria del censo InfoMIRA: acumulado de personas instaladas en el tiempo"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="shot-caption">Evolución del censo</figcaption>
+            </figure>
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">infomira-censo · /informe</div>
+              </div>
+              <div class="shot-media">
+                <img
+                  src={`${base}images/censo/informe-whatsapp.png`}
+                  alt="Informe semanal de InfoMIRA Censo listo para copiar y pegar en WhatsApp"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="shot-caption">Informe semanal para WhatsApp</figcaption>
+            </figure>
           </div>
           <div class="case-actions">
-            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
+            <div class="case-product">
+              <a
+                class="btn btn-primary"
+                href="https://infomira-censo-production.up.railway.app/dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir app en producción
+              </a>
+              <p class="case-access-note">Requiere acceso (login)</p>
+            </div>
+            <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener noreferrer">
               ¿Necesitas un panel así para tu operación?
-            </a>
-            <a
-              class="case-repo"
-              href="https://github.com/crearbots/censo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Código en GitHub
             </a>
           </div>
         </article>

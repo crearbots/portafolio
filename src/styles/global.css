@@ -594,21 +594,36 @@ section h2 {
   letter-spacing: -0.01em;
 }
 
-/* Product UI screenshot frame */
-.shot-frame {
+/* Product UI screenshot gallery */
+.shot-gallery {
+  display: grid;
+  gap: 1rem;
   margin: 0.35rem 0 1.25rem;
+}
+
+@media (min-width: 720px) {
+  .shot-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+.shot-frame {
+  margin: 0;
   border-radius: 12px;
   border: 1px solid var(--border);
   background: linear-gradient(180deg, #1a1f28 0%, #12161c 100%);
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
 }
 
 .shot-chrome {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  padding: 0.65rem 0.85rem;
+  padding: 0.55rem 0.7rem;
   background: rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid var(--border-soft);
 }
@@ -616,11 +631,12 @@ section h2 {
 .shot-dots {
   display: flex;
   gap: 0.35rem;
+  flex-shrink: 0;
 }
 
 .shot-dots span {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #3a4250;
 }
@@ -633,46 +649,39 @@ section h2 {
   flex: 1;
   min-width: 0;
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--text-dim);
   background: rgba(0, 0, 0, 0.28);
   border: 1px solid var(--border-soft);
   border-radius: 6px;
-  padding: 0.28rem 0.65rem;
+  padding: 0.22rem 0.55rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.shot-slot {
-  position: relative;
-  min-height: 168px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 1.5rem 1rem;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(107, 168, 216, 0.06), transparent 70%),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 10px,
-      rgba(255, 255, 255, 0.012) 10px,
-      rgba(255, 255, 255, 0.012) 20px
-    );
+.shot-media {
+  background: #0d1117;
+  line-height: 0;
 }
 
-.shot-slot-label {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 550;
+.shot-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
 }
 
-.shot-slot-hint {
-  color: var(--text-dim);
+.shot-caption {
+  margin: 0;
+  padding: 0.55rem 0.75rem 0.7rem;
   font-size: 0.8rem;
+  font-weight: 550;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .case-actions {
@@ -685,8 +694,22 @@ section h2 {
   border-top: 1px solid var(--border-soft);
 }
 
+.case-product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.case-access-note {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+
 .case-actions .btn-primary {
-  order: -1;
+  order: unset;
 }
 
 .case-repo {
@@ -877,6 +900,10 @@ section h2 {
   .case-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .case-product {
+    width: 100%;
   }
 
   .case-actions .btn {

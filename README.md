@@ -34,8 +34,17 @@ La salida queda en `dist/`.
 ## GitHub Pages
 
 - `astro.config.mjs`: `site: https://crearbots.github.io`, `base: /portfolio/`
-- Deploy automático con GitHub Actions (`.github/workflows/deploy.yml`) al hacer push a `main`
-- Source de Pages: **GitHub Actions**
+- **Deploy actual:** rama `gh-pages` con el contenido de `dist/` + archivo `.nojekyll` (necesario para la carpeta `_astro`)
+- Source de Pages: branch `gh-pages` / root
+
+### Redeploy manual
+
+```bash
+npm run build
+# publicar contenido de dist/ en la rama gh-pages (incluye .nojekyll)
+```
+
+Opcional: cuando el token de autenticación tenga scope `workflow`, se puede añadir `.github/workflows/deploy.yml` (Actions → Pages) y cambiar el source de Pages a GitHub Actions.
 
 ## Contacto
 

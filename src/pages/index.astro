@@ -258,44 +258,169 @@ const github = 'https://github.com/crearbots';
           </div>
         </article>
 
-        <article class="case" aria-labelledby="caso-whatsapp">
+        <article class="case" aria-labelledby="caso-whatsapp-envios">
           <div class="case-header">
-            <h3 id="caso-whatsapp">WhatsApp mensajes personalizados</h3>
-            <span class="badge badge-wip">En evolución · en pruebas</span>
+            <h3 id="caso-whatsapp-envios">whatsapp-envios</h3>
+            <span class="badge badge-wip">En evolución · MVP</span>
           </div>
           <dl class="case-grid">
             <div class="case-block">
-              <dt>Qué es</dt>
+              <dt>Problema</dt>
               <dd>
-                Prototipo de escritorio que toma contactos desde Excel y envía mensajes
-                personalizados por WhatsApp Web.
+                Convocatorias e invitaciones por WhatsApp se armaban uno a uno: lento, fácil
+                de equivocarse y difícil de seguir quién recibió el mensaje.
               </dd>
             </div>
             <div class="case-block">
-              <dt>Estado</dt>
+              <dt>Solución</dt>
               <dd>
-                En pruebas. No es un SaaS publicado; es un flujo que se madura con quien lo
-                necesita.
+                Herramienta web con login y roles, campañas, carga de Excel, vinculación de
+                WhatsApp por QR por usuario, progreso del envío, reintento de fallidos y
+                multimedia opcional.
+              </dd>
+            </div>
+            <div class="case-block">
+              <dt>Resultado</dt>
+              <dd>
+                MVP operativo para uso interno del equipo: envíos personalizados con control
+                de destinatarios y corrección de números sin WhatsApp.
               </dd>
             </div>
             <div class="case-block">
               <dt>Stack</dt>
-              <dd>Python, Tkinter, PyAutoGUI, pandas</dd>
+              <dd>Node.js, Express, SQLite (better-sqlite3), whatsapp-web.js, Excel (xlsx), JWT</dd>
             </div>
           </dl>
           <div class="case-stack" aria-label="Tecnologías">
-            <span class="stack-chip">Python</span>
-            <span class="stack-chip">Tkinter</span>
-            <span class="stack-chip">PyAutoGUI</span>
-            <span class="stack-chip">pandas</span>
+            <span class="stack-chip">Node.js</span>
+            <span class="stack-chip">Express</span>
+            <span class="stack-chip">SQLite</span>
+            <span class="stack-chip">whatsapp-web.js</span>
+            <span class="stack-chip">Excel</span>
+            <span class="stack-chip">JWT</span>
+          </div>
+          <div class="shot-gallery shot-gallery--duo" aria-label="Capturas pendientes de whatsapp-envios">
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">whatsapp-envios · /campañas</div>
+              </div>
+              <div
+                class="shot-slot"
+                role="img"
+                aria-label="Espacio reservado para captura de campañas"
+                data-lightbox-src=""
+                data-lightbox-alt="Captura de campañas en whatsapp-envios"
+                data-lightbox-caption="Campañas"
+              >
+                <span class="shot-slot-label">Captura del producto</span>
+                <span class="shot-slot-hint">Campañas y carga de Excel</span>
+              </div>
+              <figcaption class="shot-caption">Campañas</figcaption>
+            </figure>
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">whatsapp-envios · /envío</div>
+              </div>
+              <div
+                class="shot-slot"
+                role="img"
+                aria-label="Espacio reservado para captura de progreso de envío"
+                data-lightbox-src=""
+                data-lightbox-alt="Captura de progreso de envío en whatsapp-envios"
+                data-lightbox-caption="Progreso del envío"
+              >
+                <span class="shot-slot-label">Captura del producto</span>
+                <span class="shot-slot-hint">Progreso y reintento de fallidos</span>
+              </div>
+              <figcaption class="shot-caption">Progreso del envío</figcaption>
+            </figure>
           </div>
           <div class="case-actions">
             <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
-              Si te interesa este flujo, lo maduramos juntos
+              Pedir demo
             </a>
             <a
               class="case-repo"
-              href="https://github.com/crearbots/WhatsApp-Mensajes-Personalizados-Web"
+              href="https://github.com/crearbots/whatsapp-envios"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Código en GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="case" aria-labelledby="caso-tokio-ui">
+          <div class="case-header">
+            <h3 id="caso-tokio-ui">tokio-ui</h3>
+            <span class="badge badge-wip">En evolución · fase 1</span>
+          </div>
+          <dl class="case-grid">
+            <div class="case-block">
+              <dt>Problema</dt>
+              <dd>
+                Interfaz compañera para un asistente de trayecto por voz: hace falta una
+                presencia visual que reaccione al audio, sin ser aún un producto cerrado.
+              </dd>
+            </div>
+            <div class="case-block">
+              <dt>Qué hace hoy</dt>
+              <dd>
+                Orbe 3D en Three.js (núcleo, cáscara, anillos) que responde al audio de otra
+                pestaña. Conectar / Cortar en Chrome de escritorio; captura en móvil queda
+                para fase 4.
+              </dd>
+            </div>
+            <div class="case-block">
+              <dt>Alcance</dt>
+              <dd>
+                Fase 1 de la UI. La voz va por ChatGPT Live en otra pestaña; no hay API de
+                OpenAI ni modelo integrado en la app.
+              </dd>
+            </div>
+            <div class="case-block">
+              <dt>Stack</dt>
+              <dd>Vite, TypeScript, Three.js</dd>
+            </div>
+          </dl>
+          <div class="case-stack" aria-label="Tecnologías">
+            <span class="stack-chip">Vite</span>
+            <span class="stack-chip">TypeScript</span>
+            <span class="stack-chip">Three.js</span>
+          </div>
+          <figure class="shot-frame shot-frame--solo" aria-label="Captura pendiente de tokio-ui">
+            <div class="shot-chrome" aria-hidden="true">
+              <div class="shot-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="shot-url">tokio-ui · orbe holográfico</div>
+            </div>
+            <div
+              class="shot-slot"
+              role="img"
+              aria-label="Espacio reservado para captura o video del orbe"
+              data-lightbox-src=""
+              data-lightbox-alt="Captura del orbe holográfico de tokio-ui"
+              data-lightbox-caption="Orbe en fase 1"
+            >
+              <span class="shot-slot-label">Captura / video</span>
+              <span class="shot-slot-hint">Espacio listo para el orbe en acción</span>
+            </div>
+            <figcaption class="shot-caption">Orbe en fase 1</figcaption>
+          </figure>
+          <div class="case-actions">
+            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
+              Lo maduramos juntos
+            </a>
+            <a
+              class="case-repo"
+              href="https://github.com/crearbots/tokio-ui"
               target="_blank"
               rel="noopener noreferrer"
             >

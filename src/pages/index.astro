@@ -394,28 +394,48 @@ const github = 'https://github.com/crearbots';
             <span class="stack-chip">TypeScript</span>
             <span class="stack-chip">Three.js</span>
           </div>
-          <figure class="shot-frame shot-frame--solo" aria-label="Captura pendiente de tokio-ui">
+          <figure class="shot-frame shot-frame--solo" aria-label="Captura de tokio-ui">
             <div class="shot-chrome" aria-hidden="true">
               <div class="shot-dots">
                 <span></span><span></span><span></span>
               </div>
               <div class="shot-url">tokio-ui · orbe holográfico</div>
             </div>
-            <div
-              class="shot-slot"
-              role="img"
-              aria-label="Espacio reservado para captura o video del orbe"
-              data-lightbox-src=""
-              data-lightbox-alt="Captura del orbe holográfico de tokio-ui"
-              data-lightbox-caption="Orbe en fase 1"
-            >
-              <span class="shot-slot-label">Captura / video</span>
-              <span class="shot-slot-hint">Espacio listo para el orbe en acción</span>
+            <div class="shot-media">
+              <button
+                type="button"
+                class="shot-trigger"
+                data-lightbox-open
+                data-lightbox-src={`${base}images/tokio/fase1-orbe.png`}
+                data-lightbox-alt="Tokio UI fase 1: orbe holográfico en negro con anillos rojo y cian; panel TOKIO con enlace activo y voz hablando"
+                data-lightbox-caption="Orbe en fase 1"
+                aria-label="Ampliar imagen: Orbe en fase 1"
+              >
+                <img
+                  src={`${base}images/tokio/fase1-orbe.png`}
+                  alt="Tokio UI fase 1: orbe holográfico en negro con anillos rojo y cian; panel TOKIO con enlace activo y voz hablando"
+                  width="1917"
+                  height="905"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
             <figcaption class="shot-caption">Orbe en fase 1</figcaption>
           </figure>
           <div class="case-actions">
-            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
+            <div class="case-product">
+              <a
+                class="btn btn-primary"
+                href="https://tokio-ui-production.up.railway.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir Tokio UI
+              </a>
+              <p class="case-access-note">Chrome de escritorio recomendado para el enlace de audio</p>
+            </div>
+            <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener noreferrer">
               Lo maduramos juntos
             </a>
             <a

@@ -741,7 +741,7 @@ section h2 {
 
 .shot-frame--solo {
   margin: 0.35rem 0 1.25rem;
-  max-width: min(100%, 420px);
+  max-width: min(100%, 560px);
 }
 
 @media (min-width: 720px) {

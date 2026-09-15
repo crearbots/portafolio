@@ -8,6 +8,9 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('og.png', new URL(import.meta.env.BASE_URL, Astro.site));
+const ogImageWidth = '1200';
+const ogImageHeight = '630';
 ---
 
 <!doctype html>
@@ -20,11 +23,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0a0c0f" />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="es_CO" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content={ogImageWidth} />
+    <meta property="og:image:height" content={ogImageHeight} />
+    <meta property="og:image:alt" content={title} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

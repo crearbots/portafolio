@@ -34,31 +34,83 @@ const github = 'https://github.com/crearbots';
 
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
-        <p class="hero-eyebrow">Disponible para proyectos</p>
-        <h1 id="hero-title">Automatización y dashboards que tu equipo puede usar cada semana</h1>
-        <p class="hero-sub">
-          Soy Sebastian Romero, ingeniero de sistemas. Construyo herramientas web e informes
-          operativos — no demos para impresionar, sistemas para trabajar.
-        </p>
-        <p class="hero-meta">
-          <span>Colombia</span>
-          <span>UTC−5</span>
-          <span>Remoto</span>
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
-            Hablemos por WhatsApp
-          </a>
-          <a class="btn btn-ghost" href={`${base}#casos`}>Ver casos</a>
-          <a
-            class="btn btn-link"
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub →
-          </a>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Disponible para proyectos</p>
+          <h1 id="hero-title">Automatización y dashboards que tu equipo puede usar cada semana</h1>
+          <p class="hero-sub">
+            Soy Sebastian Romero, ingeniero de sistemas. Construyo herramientas web e informes
+            operativos — no demos para impresionar, sistemas para trabajar.
+          </p>
+          <p class="hero-meta">
+            <span>Colombia</span>
+            <span>UTC−5</span>
+            <span>Remoto</span>
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href={wa} target="_blank" rel="noopener noreferrer">
+              Hablemos por WhatsApp
+            </a>
+            <a class="btn btn-ghost" href={`${base}#casos`}>Ver casos</a>
+            <a
+              class="btn btn-link"
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub →
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-glow"></div>
+          <div class="hero-stage">
+            <div class="hero-float hero-float--stats">
+              <div class="hero-stat">
+                <span class="hero-stat-label">Avance</span>
+                <span class="hero-stat-value">58%</span>
+                <span class="hero-stat-bar"><i style="width:58%"></i></span>
+              </div>
+              <div class="hero-stat hero-stat--sm">
+                <span class="hero-stat-label">Operativo</span>
+                <span class="hero-stat-chip">v1.4</span>
+              </div>
+            </div>
+            <figure class="hero-product">
+              <div class="hero-product-chrome">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">dashboard · operativo</div>
+              </div>
+              <div class="hero-product-media">
+                <img
+                  src={`${base}images/censo/hero-dashboard.png`}
+                  alt=""
+                  width="1839"
+                  height="620"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </div>
+            </figure>
+            <div class="hero-float hero-float--stack">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Node.js</span>
+            </div>
+            <svg class="hero-orbit" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="160" cy="160" r="118" stroke="url(#orbitGrad)" stroke-width="1.2" stroke-dasharray="4 8" opacity="0.55" />
+              <circle cx="160" cy="160" r="148" stroke="rgba(232,160,84,0.22)" stroke-width="1" stroke-dasharray="2 10" />
+              <defs>
+                <linearGradient id="orbitGrad" x1="40" y1="40" x2="280" y2="280">
+                  <stop stop-color="#6ba8d8" />
+                  <stop offset="1" stop-color="#e8a054" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -111,7 +163,7 @@ const github = 'https://github.com/crearbots';
           <h2 id="casos-title">Trabajo real, no demos</h2>
         </div>
 
-        <article class="case" aria-labelledby="caso-censo">
+        <article class="case case--magazine" aria-labelledby="caso-censo">
           <div class="case-header">
             <h3 id="caso-censo">censo</h3>
             <span class="badge badge-live">Proyecto real · en uso</span>
@@ -151,8 +203,8 @@ const github = 'https://github.com/crearbots';
             <span class="stack-chip">SQLite</span>
             <span class="stack-chip">Railway</span>
           </div>
-          <div class="shot-gallery" aria-label="Capturas del producto censo" data-lightbox-gallery>
-            <figure class="shot-frame">
+          <div class="shot-gallery shot-gallery--feature" aria-label="Capturas del producto censo" data-lightbox-gallery>
+            <figure class="shot-frame shot-frame--feature">
               <div class="shot-chrome" aria-hidden="true">
                 <div class="shot-dots">
                   <span></span><span></span><span></span>
@@ -258,7 +310,7 @@ const github = 'https://github.com/crearbots';
           </div>
         </article>
 
-        <article class="case" aria-labelledby="caso-tokio-ui">
+        <article class="case case--magazine" aria-labelledby="caso-tokio-ui">
           <div class="case-header">
             <h3 id="caso-tokio-ui">tokio-ui</h3>
             <span class="badge badge-wip">En evolución · fase 1</span>
@@ -296,7 +348,7 @@ const github = 'https://github.com/crearbots';
             <span class="stack-chip">TypeScript</span>
             <span class="stack-chip">Three.js</span>
           </div>
-          <figure class="shot-frame shot-frame--solo" aria-label="Captura de tokio-ui">
+          <figure class="shot-frame shot-frame--hero" aria-label="Captura de tokio-ui">
             <div class="shot-chrome" aria-hidden="true">
               <div class="shot-dots">
                 <span></span><span></span><span></span>
@@ -351,7 +403,7 @@ const github = 'https://github.com/crearbots';
           </div>
         </article>
 
-        <article class="case" aria-labelledby="caso-whatsapp-envios">
+        <article class="case case--magazine case--text" aria-labelledby="caso-whatsapp-envios">
           <div class="case-header">
             <h3 id="caso-whatsapp-envios">whatsapp-envios</h3>
             <span class="badge badge-wip">MVP · pruebas internas</span>

@@ -52,7 +52,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
@@ -117,6 +116,8 @@ button:focus-visible {
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--border-soft);
+  /* Containing block for absolute mobile .nav-links dropdown */
+  width: 100%;
 }
 
 .nav {
@@ -211,12 +212,22 @@ button:focus-visible {
   position: relative;
   padding: 4.5rem 0 4.5rem;
   border-bottom: 1px solid var(--border-soft);
-  /* Do NOT use overflow:hidden here — it clips Syne glyphs when
-     combined with background-clip:text on the H1 (final "n" in Automatización). */
+  /* Keep visible so Syne + background-clip:text glyphs (Automatización) are not clipped.
+     Decorative bleed is clipped by .hero-fx instead — never put overflow-x:hidden on
+     body/html, which breaks position:sticky on .site-header. */
   overflow: visible;
 }
 
-.hero::before {
+/* Isolates glow/grid overflow so sticky nav ancestors stay overflow:visible */
+.hero-fx {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-fx::before {
   content: "";
   position: absolute;
   inset: -20% -10% auto;
@@ -225,11 +236,9 @@ button:focus-visible {
     radial-gradient(ellipse 50% 48% at 12% 18%, rgba(232, 160, 84, 0.14), transparent 55%),
     radial-gradient(ellipse 48% 50% at 82% 28%, rgba(107, 168, 216, 0.18), transparent 58%),
     radial-gradient(ellipse 45% 40% at 48% 88%, rgba(40, 60, 90, 0.2), transparent 60%);
-  pointer-events: none;
-  z-index: 0;
 }
 
-.hero::after {
+.hero-fx::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -239,8 +248,6 @@ button:focus-visible {
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 75% 65% at 55% 35%, black 15%, transparent 78%);
   -webkit-mask-image: radial-gradient(ellipse 75% 65% at 55% 35%, black 15%, transparent 78%);
-  pointer-events: none;
-  z-index: 0;
   opacity: 0.65;
 }
 

@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
 const wa = 'https://wa.me/573138793438';
 const github = 'https://github.com/crearbots';
+const linkedin = 'https://www.linkedin.com/in/juan-sebastian-romero-velez-321b67429/';
 ---
 
 <Layout
@@ -59,6 +60,14 @@ const github = 'https://github.com/crearbots';
               rel="noopener noreferrer"
             >
               GitHub →
+            </a>
+            <a
+              class="btn btn-link"
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn →
             </a>
           </div>
         </div>
@@ -537,6 +546,14 @@ const github = 'https://github.com/crearbots';
             >
               GitHub
             </a>
+            <a
+              class="btn btn-ghost"
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </div>
           <p class="contact-note">Horario laboral · Colombia (UTC−5)</p>
         </div>
@@ -549,6 +566,8 @@ const github = 'https://github.com/crearbots';
       <p>Sebastian Romero · Automatización y dashboards</p>
       <p>
         <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        {' · '}
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </p>
     </div>
   </footer>

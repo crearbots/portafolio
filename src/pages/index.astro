@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 const base = import.meta.env.BASE_URL;
 const wa = 'https://wa.me/573138793438';
 const github = 'https://github.com/crearbots';
 const linkedin = 'https://www.linkedin.com/in/juan-sebastian-romero-velez-321b67429/';
+const aboutPhotoRel = 'images/about/sebastian.jpg';
+const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel));
 ---
 
 <Layout
@@ -503,24 +507,46 @@ const linkedin = 'https://www.linkedin.com/in/juan-sebastian-romero-velez-321b67
           <p class="section-label">Sobre mí</p>
           <h2 id="sobre-title">Ingeniero de sistemas, enfoque operativo</h2>
         </div>
-        <div class="about-text">
-          <p>
-            Me importa más que tus procesos no dependan de un “héroe del Excel” que sabe dónde
-            está cada hoja. Diseño herramientas para que el equipo opere con claridad: dashboards,
-            informes y automatizaciones que se usan de verdad.
-          </p>
-          <p>
-            Trabajo con Python, Node.js y Linux. Estoy en Colombia (UTC−5) y atiendo proyectos en
-            remoto.
-          </p>
+        <div class="about-layout">
+          <div class="about-presence">
+            {aboutPhotoExists ? (
+              <img
+                class="about-avatar"
+                src={`${base}${aboutPhotoRel}`}
+                alt="Sebastian Romero"
+                width="160"
+                height="160"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <div class="about-avatar about-avatar-placeholder" aria-hidden="true">
+                <span>SR</span>
+              </div>
+            )}
+            <p class="about-presence-label">Sebastian Romero</p>
+          </div>
+          <div class="about-body">
+            <div class="about-text">
+              <p>
+                Me importa más que tus procesos no dependan de un “héroe del Excel” que sabe dónde
+                está cada hoja. Diseño herramientas para que el equipo opere con claridad: dashboards,
+                informes y automatizaciones que se usan de verdad.
+              </p>
+              <p>
+                Trabajo con Python, Node.js y Linux. Estoy en Colombia (UTC−5) y atiendo proyectos en
+                remoto.
+              </p>
+            </div>
+            <ul class="about-tags" aria-label="Herramientas y contexto">
+              <li>Python</li>
+              <li>Node.js</li>
+              <li>Linux</li>
+              <li>Colombia · UTC−5</li>
+              <li>Remoto</li>
+            </ul>
+          </div>
         </div>
-        <ul class="about-tags" aria-label="Herramientas y contexto">
-          <li>Python</li>
-          <li>Node.js</li>
-          <li>Linux</li>
-          <li>Colombia · UTC−5</li>
-          <li>Remoto</li>
-        </ul>
       </div>
     </section>
 

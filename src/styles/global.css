@@ -213,6 +213,7 @@ button:focus-visible {
   position: relative;
   padding: 4.5rem 0 4.5rem;
   border-bottom: 1px solid var(--border-soft);
+  min-width: 0;
   /* Keep visible so Syne + background-clip:text glyphs (Automatización) are not clipped.
      Decorative bleed is clipped by .hero-fx instead — never put overflow-x:hidden on
      body/html, which breaks position:sticky on .site-header. */

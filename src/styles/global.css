@@ -456,11 +456,9 @@ button:focus-visible {
 .hero-product-media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9.5;
+  aspect-ratio: 1248 / 729;
   object-fit: cover;
-  object-position: center 42%;
-  transform: scale(1.08);
-  transform-origin: center 40%;
+  object-position: center center;
 }
 
 .hero-product-caption {

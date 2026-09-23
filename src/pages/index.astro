@@ -36,6 +36,14 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
       </ul>
     </div>
   </header>
+  <button
+    type="button"
+    class="nav-backdrop"
+    id="nav-backdrop"
+    tabindex="-1"
+    aria-hidden="true"
+    aria-label="Cerrar menú"
+  ></button>
 
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
@@ -628,16 +636,31 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
   <script>
     const toggle = document.getElementById('nav-toggle');
     const menu = document.getElementById('nav-menu');
+    const backdrop = document.getElementById('nav-backdrop');
     if (toggle && menu) {
-      toggle.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
+      const setNavOpen = (open) => {
+        menu.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('nav-open', open);
+        if (backdrop) {
+          backdrop.setAttribute('aria-hidden', String(!open));
+        }
+      };
+      const closeNav = () => setNavOpen(false);
+
+      toggle.addEventListener('click', () => {
+        setNavOpen(!menu.classList.contains('open'));
       });
       menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeNav);
+      });
+      if (backdrop) {
+        backdrop.addEventListener('click', closeNav);
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('nav-open')) {
+          closeNav();
+        }
       });
     }
 

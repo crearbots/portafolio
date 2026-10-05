@@ -490,7 +490,7 @@ body.nav-open .nav-backdrop {
 .hero-product-media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1248 / 729;
+  aspect-ratio: 1232 / 605;
   object-fit: cover;
   object-position: center center;
 }

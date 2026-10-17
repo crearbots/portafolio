@@ -1605,3 +1605,15 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+
+.case-header h3.case-title-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.case-title-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}

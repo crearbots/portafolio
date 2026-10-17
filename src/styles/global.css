@@ -490,7 +490,7 @@ body.nav-open .nav-backdrop {
 .hero-product-media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1232 / 605;
+  aspect-ratio: 1232 / 619;
   object-fit: cover;
   object-position: center center;
 }
@@ -1606,14 +1606,14 @@ body.lightbox-open {
   }
 }
 
-.case-header h3.case-title-with-icon {
-  display: inline-flex;
+.case-header h3.case-title-lockup {
+  line-height: 1;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.case-title-icon {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
+.case-title-lockup-img {
+  display: block;
+  height: 0.74em;
+  width: auto;
 }

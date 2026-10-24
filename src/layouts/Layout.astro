@@ -8,9 +8,9 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL('og.png', new URL(import.meta.env.BASE_URL, Astro.site));
-const ogImageWidth = '1200';
-const ogImageHeight = '630';
+const ogImage = new URL('images/sintonia/hero-dashboard.png', new URL(import.meta.env.BASE_URL, Astro.site));
+const ogImageWidth = '1232';
+const ogImageHeight = '619';
 ---
 
 <!doctype html>

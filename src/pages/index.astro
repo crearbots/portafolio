@@ -330,6 +330,138 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
             </a>
           </div>
         </article>
+
+        <article class="case case--magazine" aria-labelledby="caso-summa">
+          <div class="case-header">
+            <h3 id="caso-summa">Summa</h3>
+            <span class="badge badge-live">Proyecto real · entregado</span>
+          </div>
+          <p class="case-subtitle">Procesador Excel contable para facturación electrónica</p>
+          <dl class="case-grid">
+            <div class="case-block">
+              <dt>Cliente</dt>
+              <dd>Asociación de contadores</dd>
+            </div>
+            <div class="case-block">
+              <dt>Qué hace</dt>
+              <dd>
+                Toma un Excel de facturación electrónica y genera otro con seis hojas listas para
+                análisis: Original, RECIBIDOS, EMITIDOS, RADIAN, RETEFUENTE y RETEICA. Incluye panel
+                de totales (compras, ventas y diferencia) y una interfaz de escritorio para Windows.
+              </dd>
+            </div>
+            <div class="case-block">
+              <dt>Alcance MVP</dt>
+              <dd>
+                App de escritorio (Python), generación de las 6 hojas, resumen de totales, protección
+                por contraseña en la primera ejecución por computador. Sin demo pública ni descarga.
+              </dd>
+            </div>
+            <div class="case-block">
+              <dt>Stack</dt>
+              <dd>Python · Excel · Windows</dd>
+            </div>
+          </dl>
+          <div class="case-stack" aria-label="Tecnologías">
+            <span class="stack-chip">Python</span>
+            <span class="stack-chip">Excel</span>
+            <span class="stack-chip">Windows</span>
+          </div>
+          <div class="shot-gallery shot-gallery--contain" aria-label="Capturas del producto Summa" data-lightbox-gallery>
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">Summa · escritorio</div>
+              </div>
+              <div class="shot-media">
+                <button
+                  type="button"
+                  class="shot-trigger"
+                  data-lightbox-open
+                  data-lightbox-src={`${base}images/summa/01-ui-vacia.png`}
+                  data-lightbox-alt="Interfaz de escritorio de Summa lista para cargar un Excel de facturación electrónica"
+                  data-lightbox-caption="Interfaz de escritorio"
+                  aria-label="Ampliar imagen: Interfaz de escritorio"
+                >
+                  <img
+                    src={`${base}images/summa/01-ui-vacia.png`}
+                    alt="Interfaz de escritorio de Summa lista para cargar un Excel de facturación electrónica"
+                    width="852"
+                    height="813"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              </div>
+              <figcaption class="shot-caption">Interfaz de escritorio</figcaption>
+            </figure>
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">Summa · totales</div>
+              </div>
+              <div class="shot-media">
+                <button
+                  type="button"
+                  class="shot-trigger"
+                  data-lightbox-open
+                  data-lightbox-src={`${base}images/summa/02-ui-procesada-limpia.png`}
+                  data-lightbox-alt="Summa tras procesar un archivo: panel de totales de compras, ventas y diferencia"
+                  data-lightbox-caption="Panel de totales"
+                  aria-label="Ampliar imagen: Panel de totales"
+                >
+                  <img
+                    src={`${base}images/summa/02-ui-procesada-limpia.png`}
+                    alt="Summa tras procesar un archivo: panel de totales de compras, ventas y diferencia"
+                    width="852"
+                    height="811"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              </div>
+              <figcaption class="shot-caption">Panel de totales</figcaption>
+            </figure>
+            <figure class="shot-frame">
+              <div class="shot-chrome" aria-hidden="true">
+                <div class="shot-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="shot-url">Summa · hoja RADIAN</div>
+              </div>
+              <div class="shot-media">
+                <button
+                  type="button"
+                  class="shot-trigger"
+                  data-lightbox-open
+                  data-lightbox-src={`${base}images/summa/03-excel-radian.png`}
+                  data-lightbox-alt="Excel generado por Summa mostrando la hoja RADIAN"
+                  data-lightbox-caption="Excel generado · hoja RADIAN"
+                  aria-label="Ampliar imagen: Excel generado · hoja RADIAN"
+                >
+                  <img
+                    src={`${base}images/summa/03-excel-radian.png`}
+                    alt="Excel generado por Summa mostrando la hoja RADIAN"
+                    width="1080"
+                    height="763"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              </div>
+              <figcaption class="shot-caption">Excel generado · hoja RADIAN</figcaption>
+            </figure>
+          </div>
+          <div class="case-actions">
+            <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener noreferrer">
+              ¿Necesitas automatizar un proceso en Excel?
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 

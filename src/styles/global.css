@@ -1631,3 +1631,9 @@ body.lightbox-open {
   object-position: center;
   background: #0f1115;
 }
+
+/* Summa lockup: icon square makes the wordmark read small at 0.9em; scale so its text matches Sintonía's */
+#caso-summa .case-title-lockup-img {
+  height: 1.4em;
+  margin-block: -0.25em;
+}

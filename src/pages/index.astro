@@ -333,7 +333,15 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
 
         <article class="case case--magazine" aria-labelledby="caso-summa">
           <div class="case-header">
-            <h3 id="caso-summa">Summa</h3>
+            <h3 id="caso-summa" class="case-title-lockup">
+              <img
+                src={`${base}images/summa/summa-lockup-dark.svg`}
+                alt="Summa"
+                width="260"
+                height="78"
+                class="case-title-lockup-img"
+              />
+            </h3>
             <span class="badge badge-live">Proyecto real · entregado</span>
           </div>
           <p class="case-subtitle">Procesador Excel contable para facturación electrónica</p>

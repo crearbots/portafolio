@@ -1644,15 +1644,17 @@ body.lightbox-open {
 .testimonials { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
 .testimonial-empty { border: 1px dashed var(--border-strong); border-radius: var(--radius-sm); padding: 1.25rem; color: var(--text-dim); background: var(--bg-elevated); }
 .opinion-form { display: grid; gap: 1rem; text-align: left; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+.form-row-hint { grid-column: 1 / -1; margin: -0.6rem 0 0; }
+.opinion-form .field { min-width: 0; }
 .field { display: grid; gap: 0.4rem; }
 .field label { font-size: 0.9rem; font-weight: 600; color: var(--text); }
 .field .optional, .field-hint { font-weight: 400; color: var(--text-dim); font-size: 0.8rem; }
 .opinion-form input[type="text"], .opinion-form input[type="email"], .opinion-form select, .opinion-form textarea {
   width: 100%; box-sizing: border-box; font: inherit; color: var(--text); background: var(--bg-elevated);
-  border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 0.7rem 0.85rem; transition: border-color var(--ease), box-shadow var(--ease);
+  border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 0.7rem 0.85rem; min-height: 2.9rem; height: 2.9rem; line-height: 1.4; margin: 0; vertical-align: top; -webkit-appearance: none; transition: border-color var(--ease), box-shadow var(--ease);
 }
-.opinion-form textarea { resize: vertical; min-height: 120px; }
+.opinion-form textarea { resize: vertical; min-height: 120px; height: auto; }
 .opinion-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 2.2rem; }
 .opinion-form input:focus-visible, .opinion-form select:focus-visible, .opinion-form textarea:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
 .check { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.92rem; color: var(--text-muted); cursor: pointer; }

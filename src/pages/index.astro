@@ -508,8 +508,7 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
             <div class="form-row">
               <div class="field">
                 <label for="op-email">Correo</label>
-                <input id="op-email" name="email" type="email" required autocomplete="email" />
-                <small class="field-hint">Solo para verificar tu opinión; no se publica.</small>
+                <input id="op-email" name="email" type="email" required autocomplete="email" aria-describedby="op-email-hint" />
               </div>
               <div class="field">
                 <label for="op-producto">Producto</label>
@@ -520,6 +519,7 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
                   <option value="Otro">Otro</option>
                 </select>
               </div>
+              <p class="field-hint form-row-hint" id="op-email-hint">Solo para verificar tu opinión; no se publica.</p>
             </div>
             <div class="field" id="op-producto-otro-field" hidden>
               <label for="op-producto-otro">Nombre del producto</label>

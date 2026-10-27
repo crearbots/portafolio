@@ -483,8 +483,7 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
         <div class="opinions-grid">
           <div class="opinions-intro">
             <p>
-              Cada opinión se revisa antes de publicarse. Si usaste Sintonía, Summa u otro
-              trabajo conmigo, me ayuda mucho saber cómo te fue.
+              Si usaste Sintonía, Summa u otro trabajo conmigo, me ayuda mucho saber cómo te fue.
             </p>
             <ul class="testimonials" aria-live="polite">
               <li class="testimonial-empty">
@@ -551,6 +550,14 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
         }
       </script>
     </section>
+  <script is:inline>
+    document.querySelectorAll('#opiniones form [required]').forEach(function (el) {
+      var msg = el.type === 'checkbox' ? 'Marca esta casilla si quieres continuar.' : 'Por favor completa este campo.';
+      el.addEventListener('invalid', function () { if (el.validity.valueMissing) el.setCustomValidity(msg); else if (el.validity.typeMismatch) el.setCustomValidity('Ingresa un correo electrónico válido.'); });
+      ['input', 'change'].forEach(function (ev) { el.addEventListener(ev, function () { el.setCustomValidity(''); }); });
+    });
+  </script>
+
 
     <section id="como-trabajo" aria-labelledby="como-title">
       <div class="wrap">

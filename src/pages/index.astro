@@ -30,6 +30,7 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
       <ul class="nav-links" id="nav-menu">
         <li><a href={`${base}#servicios`}>Servicios</a></li>
         <li><a href={`${base}#casos`}>Casos</a></li>
+        <li><a href={`${base}#opiniones`}>Opiniones</a></li>
         <li><a href={`${base}#sobre-mi`}>Sobre mí</a></li>
         <li><a href={`${base}#contacto`}>Contacto</a></li>
         <li><a href={github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -471,6 +472,84 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
           </div>
         </article>
       </div>
+    </section>
+
+    <section id="opiniones" aria-labelledby="opiniones-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-label">Opiniones</p>
+          <h2 id="opiniones-title">Lo que dicen quienes ya trabajaron conmigo</h2>
+        </div>
+        <div class="opinions-grid">
+          <div class="opinions-intro">
+            <p>
+              Cada opinión se revisa antes de publicarse. Si usaste Sintonía, Summa u otro
+              trabajo conmigo, me ayuda mucho saber cómo te fue.
+            </p>
+            <ul class="testimonials" aria-live="polite">
+              <li class="testimonial-empty">
+                Pronto verás aquí opiniones de clientes. Si ya trabajamos juntos, deja la tuya.
+              </li>
+            </ul>
+          </div>
+          <form
+            class="contact-box opinion-form"
+            action="https://formsubmit.co/jsrvjuan@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_cc" value="crearbots+opiniones@mail.grokbot.com" />
+            <input type="hidden" name="_subject" value="Nueva opinión · portafolio CrearBots" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://crearbots.github.io/portafolio/?enviado=1#opiniones" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <p id="opinion-ok" class="form-success" role="status" hidden>
+              ¡Gracias! Recibí tu opinión. La revisaré antes de publicarla.
+            </p>
+            <div class="form-row">
+              <div class="field">
+                <label for="op-nombre">Nombre</label>
+                <input id="op-nombre" name="nombre" type="text" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="op-cargo">Cargo o empresa <span class="optional">(opcional)</span></label>
+                <input id="op-cargo" name="cargo" type="text" autocomplete="organization" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="op-email">Correo</label>
+                <input id="op-email" name="email" type="email" required autocomplete="email" />
+                <small class="field-hint">Solo para verificar tu opinión; no se publica.</small>
+              </div>
+              <div class="field">
+                <label for="op-producto">Producto</label>
+                <select id="op-producto" name="producto" required>
+                  <option value="" disabled selected>Selecciona…</option>
+                  <option value="Sintonía">Sintonía</option>
+                  <option value="Summa">Summa</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="op-opinion">Opinión</label>
+              <textarea id="op-opinion" name="opinion" rows="5" required></textarea>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="autorizo" value="si" required />
+              <span>Autorizo publicar mi nombre y opinión en el portafolio</span>
+            </label>
+            <button type="submit" class="btn btn-primary">Enviar opinión</button>
+          </form>
+        </div>
+      </div>
+      <script is:inline>
+        if (new URLSearchParams(location.search).get('enviado') === '1') {
+          var ok = document.getElementById('opinion-ok');
+          if (ok) ok.hidden = false;
+        }
+      </script>
     </section>
 
     <section id="como-trabajo" aria-labelledby="como-title">

@@ -531,6 +531,10 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
                 </select>
               </div>
             </div>
+            <div class="field" id="op-producto-otro-field" hidden>
+              <label for="op-producto-otro">Nombre del producto</label>
+              <input id="op-producto-otro" name="producto_otro" type="text" disabled />
+            </div>
             <div class="field">
               <label for="op-opinion">Opinión</label>
               <textarea id="op-opinion" name="opinion" rows="5" required></textarea>
@@ -556,6 +560,24 @@ const aboutPhotoExists = existsSync(join(process.cwd(), 'public', aboutPhotoRel)
       el.addEventListener('invalid', function () { if (el.validity.valueMissing) el.setCustomValidity(msg); else if (el.validity.typeMismatch) el.setCustomValidity('Ingresa un correo electrónico válido.'); });
       ['input', 'change'].forEach(function (ev) { el.addEventListener(ev, function () { el.setCustomValidity(''); }); });
     });
+    (function () {
+      var sel = document.getElementById('op-producto');
+      var wrap = document.getElementById('op-producto-otro-field');
+      var inp = document.getElementById('op-producto-otro');
+      if (!sel || !wrap || !inp) return;
+      inp.addEventListener('invalid', function () { if (inp.validity.valueMissing) inp.setCustomValidity('Escribe el nombre del producto.'); });
+      inp.addEventListener('input', function () { inp.setCustomValidity(''); });
+      function sync() {
+        var otro = sel.value === 'Otro';
+        wrap.hidden = !otro;
+        inp.disabled = !otro;
+        inp.required = otro;
+        if (!otro) inp.value = '';
+        inp.setCustomValidity('');
+      }
+      sel.addEventListener('change', sync);
+      sync();
+    })();
   </script>
 
 
